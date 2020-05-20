@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<!-- HEAD -->
+<head> 
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-54336047-7"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-54336047-7');
+    </script>
+
+    <!-- Balises META -->
+    <meta charset="utf-8">
+    <meta name="description" content="Application de location de vélo" />
+    <meta name="robots" content="index,follow" />
+    
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/png" href="images/favicon/favicon.ico" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Polices Googles Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Public+Sans:300,400,500,600,700,900%7cMontserrat:300,400,700,900%7cOpen+Sans:300,400,700,900%7cRoboto:300,400,700,900" rel="stylesheet">
+
+    <!-- Polices Fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+    <title>Application de réservation de vélo Bike Luxembourg</title>
+
+    <!-- Leaflet's CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin=""/>
+
+    <!-- Leaflet's JS -->
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+    crossorigin=""></script>
+
+</head>
+
+<body>
+
+    <!-- ================================================ HEADER ================================================ -->
+
+    <header id="application">
+        <nav>
+            <img src="images/icons/logo-bike.svg" id="logo" class="main-logo" alt="Bike Luxembourg logo" />
+            <div id="popup-container">
+                <div class="popup-background">
+                  <div class="popup">
+                    <h2>Bienvenue !</h2>
+                    <p>VeloLuxembourg est une application fictive réalisée par Ismaël Jouhari.</p>
+                    <p>Ce projet s'inscrit dans la formation Web Developer d'Openclassrooms.</p>
+                    <svg class="popup-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="none"><rect x="0" y="0" fill="none" width="100%" height="100%" rx="3" ry="3"></rect>
+                    </svg>
+                  </div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="buttons"><figure id="six" class="button"><i class="fas fa-info-circle"></i></figure></div>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- ================================================ SECTIONS ================================================ -->
+
+    <section id='slider'>
+        <h1>Bienvenue sur l'application Vélo Luxembourg</h1>
+        <ul class='carousel'>
+            <li class="items main-pos" id="1"><img src="images/slider/slide-1.svg" alt="Etape 1 : Explorez la carte" /></li>
+            <li class="items right-pos" id="2"><img src="images/slider/slide-2.svg" alt="Etape 2 : Cliquez sur une station" /></li>
+            <li class="items back-pos" id="3"><img src="images/slider/slide-3.svg" alt="Etape 3 : Réservez une vélo" /></li>
+            <li class="items hide-pos" id="4"><img src="images/slider/slide-4.svg" alt="Etape 4 : Entrez vos informations" /></li>
+            <li class="items left-pos" id="5"><img src="images/slider/slide-5.svg" alt="Etape 5 : FInalisez votre réservation" /></li>
+        </ul>
+        <div id='controls'>
+            <figure id='previous' class='previous'><img alt='précédent' src='images/icons/previous.svg'/></figure>
+            <button class='pause' id='pause'></button>
+            <figure id="next" class='next'><img alt='suivant' src='images/icons/next.svg'/></figure>
+        </div> 
+        <a href='#container'><span id='start' class='start'>Commencer</span></a>
+    </section>   
+
+    <section id='container'>
+        <h2>Bienvenue sur la carte Vélo Luxembourg</h2>
+        <div id='map-container'>
+            <figure id="setView" class='setView'><i class="fas fa-compass"></i></figure>
+            <a href="#application"><span id="instructions" class="instructions">Mode d'emploi</span></a>
+            <div id="map"></div>
+        </div>
+        </section>
+
+    <!-- ================================================ SCRIPTS JS ================================================ -->
+    
+    <!-- jQuery via CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Mapbox -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css' rel='stylesheet' />
+
+    <!-- Scripts du projet --> 
+    <script src="js/slider.js"></script>
+    <script src="js/htmlProvider.js"></script>
+    <script src="js/map.js"></script>    
+    <script src="js/booking.js"></script>
+    <script src="js/canvas.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
